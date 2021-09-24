@@ -13,7 +13,7 @@ import Cocktail.Ingredients.Vodka;
  * @version 1.0
  */
 public class WhiteRussian extends Cocktail {
-    
+    // these arrays are required for validation in setters
     private static Ingredient[] correctIngredients = setCorrectIngredients();
     private static Action[] correctActions = setCorrecActions();
 
@@ -41,7 +41,7 @@ public class WhiteRussian extends Cocktail {
             Ingredient[] tmp = {ice, milkCream, liquor, vodka};
             correcIngredients = tmp;
         } catch (Exception e) {
-            System.out.println(e.getMessage() + "There is constants, don't touch it");
+            System.out.println(e.getMessage() + "There are constants, don't touch it!!!");
         }
         return correcIngredients;
     }
@@ -68,7 +68,6 @@ public class WhiteRussian extends Cocktail {
             }
         }
         this.actions = actions;
-        System.out.println("\n\n\nChild setter!!");
     }
 
     @Override

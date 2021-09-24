@@ -8,12 +8,19 @@ import Cocktail.Ingredient;
  * @version 1.0
  */
 public class MilkCream  extends Ingredient {
-    
+    /**
+     * @param volume ingredient volume in milliliters
+     * @param abv alcohol by volume in percent
+     * @throws Exception  throws exception with correcponding message
+     */
     public MilkCream(int volume, float abv) throws Exception {
         super(volume, abv);
     }
 
-
+    /**
+     * @param abv overriden setter for class MilkCream 
+     * for validating input
+     */
     @Override
     public void setAbv(float abv) throws Exception {
         if (abv != 0) {
