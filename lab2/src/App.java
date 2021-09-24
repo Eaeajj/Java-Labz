@@ -6,7 +6,10 @@ import Cocktail.Ingredients.MilkCream;
 import Cocktail.Ingredients.Vodka;
 import Cocktail.Action;
 
-
+/**
+ * @author <a href="https://github.com/Eaeajj/Java-Labz">Zalesskiy Oleg</a>
+ * @version 1.0
+ */
 public class App {
     public static void main(String[] args) throws Exception {
         Vodka vodka = new Vodka(30, 40);
@@ -26,5 +29,6 @@ public class App {
         WhiteRussian whiteRussian = new WhiteRussian(actions, ingredients);
 
         System.out.println(whiteRussian.getAbv());
+
     }
 }

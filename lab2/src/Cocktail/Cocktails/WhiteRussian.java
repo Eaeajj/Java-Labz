@@ -8,17 +8,23 @@ import Cocktail.Ingredients.Liquor;
 import Cocktail.Ingredients.MilkCream;
 import Cocktail.Ingredients.Vodka;
 
-
-
+/**
+ * @author <a href="https://github.com/Eaeajj/Java-Labz">Zalesskiy Oleg</a>
+ * @version 1.0
+ */
 public class WhiteRussian extends Cocktail {
     
     private static Ingredient[] correctIngredients = setCorrectIngredients();
     private static Action[] correctActions = setCorrecActions();
 
+    /**
+     * 
+     * @param actions an array of actions needed to create a cocktail
+     * @param ingredients an array of ingredients needed to create a cocktail
+     * @throws Exception throws exception with correcponding message
+     */
     public WhiteRussian(Action[] actions, Ingredient[] ingredients) throws Exception {
-        super();
-        setActions(actions);
-        setIngredients(ingredients);
+        super(actions, ingredients);
     }
 
     private static Ingredient[] setCorrectIngredients() {
@@ -37,7 +43,6 @@ public class WhiteRussian extends Cocktail {
         } catch (Exception e) {
             System.out.println(e.getMessage() + "There is constants, don't touch it");
         }
-        
         return correcIngredients;
     }
 
@@ -47,12 +52,10 @@ public class WhiteRussian extends Cocktail {
         Action pourLiquor = Action.POUR;
         Action pourVodka = Action.POUR;
         Action stir = Action.STIR;
-
         Action[] correctActions = {addIce, pourMilkCream, pourLiquor, pourVodka, stir};
 
         return correctActions;
     }
-
 
     @Override
     public void setActions(Action[] actions) throws Exception {
@@ -64,8 +67,8 @@ public class WhiteRussian extends Cocktail {
                 throw new Exception("Wrong ingredients");
             }
         }
-        
         this.actions = actions;
+        System.out.println("\n\n\nChild setter!!");
     }
 
     @Override
