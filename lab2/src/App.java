@@ -28,7 +28,7 @@ public class App {
         
         WhiteRussian whiteRussian = new WhiteRussian(actions, ingredients);
 
-        System.out.println(whiteRussian.getAbv());
+        System.out.println("\nAlcohol by volume in this cocktail " + whiteRussian.getAbv());
 
     }
 }

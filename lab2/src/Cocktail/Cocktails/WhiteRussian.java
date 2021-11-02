@@ -14,8 +14,8 @@ import Cocktail.Ingredients.Vodka;
  */
 public class WhiteRussian extends Cocktail {
     // these arrays are required for validation in setters
-    private static Ingredient[] correctIngredients = setCorrectIngredients();
-    private static Action[] correctActions = setCorrecActions();
+    private static final Ingredient[] correctIngredients = setCorrectIngredients();
+    private static final Action[] correctActions = setCorrecActions();
 
     /**
      * 
@@ -63,8 +63,8 @@ public class WhiteRussian extends Cocktail {
         if (len != correctActions.length) 
             throw new Exception("Wrong amount of actions");
         for (int i = 0; i < len; i++) {
-            if (actions[i].getClass() != correctActions[i].getClass()){
-                throw new Exception("Wrong ingredients");
+            if (!actions[i].equals(correctActions[i])){
+                throw new Exception("Wrong sequence of actions");
             }
         }
         this.actions = actions;
@@ -82,9 +82,9 @@ public class WhiteRussian extends Cocktail {
             }
             volums[i] = ingredients[i].getVolume();
         }
-        if (volums[0] / volums[1] != 2) throw new Exception("Wrong ratio");
-        if (volums[1] / volums[2] != 1) throw new Exception("Wrong ratio");
-        if (volums[2] / volums[3] != 1) throw new Exception("Wrong ratio");
+        if (volums[0] / volums[1] != 2) throw new Exception("Wrong ratio of volums");
+        if (volums[1] / volums[2] != 1) throw new Exception("Wrong ratio of volums");
+        if (volums[2] / volums[3] != 1) throw new Exception("Wrong ratio of volums");
 
         this.ingredients = ingredients;
     }

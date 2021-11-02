@@ -25,7 +25,7 @@ public class Ice extends Ingredient {
     @Override
     public void setAbv(float abv) throws Exception {
         if (abv != 0) {
-            throw new Exception("\nABV should be equal 0 for liquor!");
+            throw new Exception("\nABV should be equal 0 for Ice!");
         }
         this.abv = abv;
     }
